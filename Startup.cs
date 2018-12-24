@@ -21,7 +21,7 @@ namespace GoodReads
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -63,7 +63,7 @@ namespace GoodReads
                 if (env.IsDevelopment())
                 {
                     // spa.UseAngularCliServer(npmScript: "start");
-                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+                    spa.UseProxyToSpaDevelopmentServer("http://localhost:5000");
                 }
             });
         }
