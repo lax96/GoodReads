@@ -9,6 +9,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { GenreComponent } from './genre/genre.component';
+import { ExploreGenreComponent } from './explore-genre/explore-genre.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GenreComponent } from './genre/genre.component';
     NavMenuComponent,
     HomeComponent,    
     FetchDataComponent,
-    GenreComponent
+    GenreComponent,
+    ExploreGenreComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,6 +28,7 @@ import { GenreComponent } from './genre/genre.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'genre', component: GenreComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'explore-genre', component: ExploreGenreComponent },
     ])
   ],
   providers: [],
