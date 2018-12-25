@@ -28,7 +28,7 @@ import { ExploreGenreComponent } from './explore-genre/explore-genre.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'genre', component: GenreComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'explore-genre', component: ExploreGenreComponent },
+      { path: 'explore-genre/:name', component: ExploreGenreComponent },
     ])
   ],
   providers: [],
