@@ -1,37 +1,43 @@
+import { ApplicationException } from './exception-handling/application-exception';
+import { CartService } from './services/cart.service';
+import { BookService } from './services/book.service';
+import { BookModule } from './book/book.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-
+import { NgModule, ErrorHandler } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { GenreComponent } from './genre/genre.component';
-import { ExploreGenreComponent } from './explore-genre/explore-genre.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeComponent,    
-    FetchDataComponent,
-    GenreComponent,
-    ExploreGenreComponent
+    HomeComponent,
+    LoginComponent,
+    LogoutComponent,
+    PageNotFoundComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'genre', component: GenreComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'explore-genre/:name', component: ExploreGenreComponent },
-    ])
+    ReactiveFormsModule,
+    CoreModule,
+    BookModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    BookService,
+    CartService,
+    { provide: ErrorHandler, useClass: ApplicationException }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

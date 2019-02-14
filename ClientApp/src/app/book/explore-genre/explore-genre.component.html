@@ -1,0 +1,13 @@
+<p>
+  Exploring {{ selectedGenreId }}...
+</p>
+
+<div *ngFor="let book of books$ | async">
+  <div class="card">
+    <div classs="card-body">
+      <h5 class="card-title">{{ book.name | titlecase }}</h5>
+      <img [src]='book.imageURL' style="width: 18rem; height: 25rem;">
+      <button (click)="addBook(book.id)"><span>Add to Cart</span></button>
+    </div>
+  </div>
+</div>

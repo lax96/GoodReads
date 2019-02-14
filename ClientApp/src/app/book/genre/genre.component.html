@@ -1,0 +1,9 @@
+<div class="container">
+  <div *ngFor="let genre of genres$ | async; let i = index" class="row">
+    <div class="card border-info mb-3" style="max-width: 18rem;">
+      <div class="card-body text-info">
+        <h5 class="card-title">{{ genre.name }}</h5>
+      </div>
+      <button [routerLink]="['/explore-genre/', genre.id]" class="btn btn-info">Explore</button>
+    </div>
+  </div>

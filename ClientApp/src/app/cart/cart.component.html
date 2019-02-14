@@ -1,0 +1,9 @@
+<p>
+  {{ username }}
+</p>
+
+<li *ngFor='let item of cart$ | async'>
+  {{ item.id }} $$ {{ item.quantity }}
+</li>
+
+{{ newCart$ | async}}

@@ -1,22 +1,36 @@
 <div class="container-fluid">
-    <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-            <div class="sidebar-sticky">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" routerLink="/">
-                            <span data-feather="home"></span>
-                            Home <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="'/genre'">
-                            <span data-feather="file"></span>
-                            Genre
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <div class="flex-column">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" routerLink="/home">
+                                <span data-feather="home">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="'/genre'">
+                                <span data-feather="file">Genre</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="'/cart'">
+                                <span data-feather="file">Cart</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="'/logout'">
+                                <span data-feather="file">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </div>
 </div>
+
+<div class="flex-column">
+    <p>Cart {{ cartSize }}</p>
+  </div>
